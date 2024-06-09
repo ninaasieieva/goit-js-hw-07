@@ -3,57 +3,43 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+/* ---------------------------------- */
 
+const controls = document.getElementById("controls");
+const numberInput = controls.querySelector('input[type="number"]');
+const createButton = controls.querySelector("[data-create]");
+const destroyButton = controls.querySelector("[data-destroy]");
+const boxesDiv = document.getElementById("boxes");
 
+createButton.addEventListener("click", () => {
+  const qty = parseInt(numberInput.value);
+  if (qty >= 1 && qty <= 100) {
+    createBoxes(qty);
+    numberInput.value = "";
+  } else {
+    alert("Please enter a number between 1 and 100");
+  }
+});
 
-const controls = document.querySelector('#controls');
-const input = controls.querySelector('input');
-const createButton = controls.querySelector('button[data-create]');
-const destroyButton = controls.querySelector('button[data-destroy]');
-const boxes = document.querySelector('#boxes');
+destroyButton.addEventListener("click", destroyBoxes);
 
+function destroyBoxes() {
+  boxesDiv.innerHTML = "";
+}
 
-function createBoxes(amount) {
-
+function createBoxes(qty) {
   destroyBoxes();
-
-
-  const fragment = document.createDocumentFragment();
-
- 
+  const elements = [];
   let size = 30;
-
-  for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
+  for ( size ; size < (30 + qty * 10); size += 10) {
+    const box = document.createElement("div");
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
-    fragment.appendChild(box);
-    size += 10; 
+    elements.push(box); 
   }
-
- 
-  boxes.appendChild(fragment);
+  if (size > 426) {
+    boxesDiv.style.width = size + 64 +"px";
+  } /* changes width of Div if size of Box larger than Div (+ padding32 *2 )*/
+  boxesDiv.append(...elements);
 }
-
-
-function destroyBoxes() {
-  boxes.innerHTML = '';
-}
-
-
-createButton.addEventListener('click', () => {
-  const amount = parseInt(input.value.trim(), 10);
-  if (amount >= 1 && amount <= 100) {
-    createBoxes(amount);
-    input.value = ''; 
-  } else {
-    alert('Please enter a number between 1 and 100');
-  }
-});
-
-
-destroyButton.addEventListener('click', () => {
-  destroyBoxes();
-  input.value = ''; 
-});
