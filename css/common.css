@@ -184,7 +184,7 @@
   .login-form input:hover {
     border: 1px solid #000;
   }
-
+  
   .login-form input:active {
     border: 1px solid #808080;
   }
@@ -197,6 +197,7 @@
     height: 40px;
     margin-top: 8px;
   }
+  
   
   /* task-5 */
   
@@ -227,10 +228,10 @@
     width: 148px;
     height: 40px;
   }
-
+  
   /* task-6 */
 
-#controls {
+.controls {
     display: flex;
     gap: 16px;
     background-color: #f6f6fe;
@@ -240,7 +241,7 @@
     margin-bottom: 16px;
   }
   
-  #boxes {
+  .boxes {
     display: flex;
     flex-wrap: wrap;
     gap: 44px;
@@ -250,7 +251,7 @@
     width: 490px;
   }
   
-  #controls input {
+  .controls input {
     border: 1px solid #808080;
     border-radius: 8px;
     padding: 8px 16px;
@@ -258,24 +259,24 @@
     text-align: center;
   }
   
-  #controls input[type="number"]::-webkit-inner-spin-button,
-  #controls input[type="number"]::-webkit-outer-spin-button {
+  .controls input[type="number"]::-webkit-inner-spin-button,
+  .controls input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
   
-  #controls input[type="number"] {
+  .controls input[type="number"] {
     -moz-appearance: textfield;
   }
   
-  #controls button[data-create] {
+  .controls button[data-create] {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 120px;
   }
   
-  #controls button[data-destroy] {
+  .controls button[data-destroy] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,6 +284,6 @@
     background: #ff4e4e;
   }
   
-  #controls button[data-destroy]:hover {
+  .controls button[data-destroy]:hover {
     background: #ff7070;
   }
