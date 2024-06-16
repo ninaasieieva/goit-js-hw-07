@@ -158,44 +158,57 @@
   
   /* task-4 */
   
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  .login-form{
     border-radius: 8px;
-    padding: 24px;
-    width: 408px;
-    background: #fff;
+      padding: 24px;
+      width: 408px;
+      height: 256px;
+      background: #fff;
+    margin-top: 24px;
+    margin-left: 24px;
+    width: 360px;
+    /* height: 152px; */
+  display: flex;
+  flex-direction: column;
+  
+    font-family: var(--main-font-family);
+        line-height: 150%;
+        color: #2e2f42;
+  }
+  .login-form label{
+    font-family: var(--main-font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.04em;
+      color: #2e2f42;
+  
   }
   
-  .login-form label {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .login-form input{
+    margin: 8px 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+        border: 1px solid #808080;
+          border-radius: 4px;
   
-  .login-form input {
-    border: 1px solid #808080;
-    border-radius: 4px;
-    height: 40px;
-    cursor: pointer;
   }
-  
-  .login-form input:hover {
-    border: 1px solid #000;
-  }
-  
-  .login-form input:active {
-    border: 1px solid #808080;
-  }
-  
-  .login-form button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .btn-submit{
+    border:none;
+    margin-top: 8px;
+    background: #4e75ff;
+    border-radius: 8px;
+    padding: 8px 16px;
     width: 86px;
     height: 40px;
-    margin-top: 8px;
+    font-family: var(--main-font-family);
+  font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #fff;
+  
   }
   
   

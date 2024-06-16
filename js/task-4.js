@@ -1,24 +1,19 @@
-const inputFormUser = document.querySelector(`.login-form`);
-const submit = document.querySelector(`.login-form`);
-    inputFormUser.addEventListener(`submit`, hendlerGetSubmit);
+const loginForm = document.querySelector(".login-form");
+loginForm.addEventListener("submit", hendlerClickOk);
 
-    function hendlerGetSubmit (event){
-    event.preventDefault();
+function hendlerClickOk(evt) {
+  evt.preventDefault();
+  const fData = new FormData(loginForm);
+  // const form = evt.target;
+  const data = {};
+  fData.forEach((value, key) => {
+    data[key] = value.trim();
+  });
 
-    // console.log(`submit`);  // перевырка роботи submit
-    // console.dir(event.currentTarget);  // перевірка форми
-
-    const {email, password} = event.currentTarget.elements;  //  деструктурізація введених знавчень
-    const emailUser = (email.value).replace(" ", "");
-    const passwordUser = (password.value).replace(" ", "");
-
-    if(emailUser === "" || passwordUser === "") {
-        alert (`All form fields must be filled in`)
-    } else {
-        const data = {
-            email: emailUser,
-            password: passwordUser,
-        }
-        console.dir(data);
-        }
+  if (data.email === "" || data.password === "") {
+    alert("All form fields must be filled in");
+  } else {
+    console.log(data);
+    loginForm.reset();
+  }
 }
